@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8730370993fe7364496bf05349fc86cd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - anim: {fileID: 739835414563380204, guid: 537e5f50686e8ff41a07912e3fe8546f, type: 3}
+  - characterMesh: {instanceID: 0}
+  - PantMesh: {instanceID: 0}
+  - weaponTransform: {instanceID: 0}
+  - weaponPrefab: {fileID: 8046043260583000945, guid: f65aae32cbc4aa24aa8098ab24cdbc0b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
