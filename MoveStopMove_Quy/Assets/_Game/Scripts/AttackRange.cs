@@ -51,7 +51,10 @@ public class AttackRange : MonoBehaviour
 
     public void ChangeAttacRange()
     {
-        radius += 1f;
+        if(radius < 12)
+        {
+            radius += 1f;
+        }
         value = true;
     }
 

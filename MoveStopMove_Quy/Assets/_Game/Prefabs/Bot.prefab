@@ -1045,6 +1045,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3454757480198869033}
     m_Modifications:
+    - target: {fileID: -1675989664710916997, guid: f65aae32cbc4aa24aa8098ab24cdbc0b, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 2034055032782980555}
+    - target: {fileID: -1675989664710916997, guid: f65aae32cbc4aa24aa8098ab24cdbc0b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7269541092470153675, guid: f65aae32cbc4aa24aa8098ab24cdbc0b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1092,6 +1100,10 @@ PrefabInstance:
     - target: {fileID: 8046043260583000945, guid: f65aae32cbc4aa24aa8098ab24cdbc0b, type: 3}
       propertyPath: m_Name
       value: Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214080091263013500, guid: f65aae32cbc4aa24aa8098ab24cdbc0b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f65aae32cbc4aa24aa8098ab24cdbc0b, type: 3}

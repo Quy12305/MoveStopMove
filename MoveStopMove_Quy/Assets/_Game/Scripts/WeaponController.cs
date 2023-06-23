@@ -7,6 +7,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float timetoLive;
     [SerializeField] AttackRange attackrange;
+    [SerializeField] Character character;
 
     public Rigidbody rb;
     private void Start()
@@ -33,6 +34,11 @@ public class WeaponController : MonoBehaviour
             Destroy(gameObject);
             other.GetComponent<Character>().OnDeath();
             attackrange.ChangeAttacRange();
+
+            if(character.GetComponent<Player>() != null)
+            {
+                character.GetComponent<Player>().EnemyIsKilled();
+            }
         }
     }
 

@@ -111,8 +111,8 @@ public class Character : MonoBehaviour
 
     public void OnDeath()
     {
-        ChangeAnim(AnimationName.dead);
         isDead = true;
+        ChangeAnim(AnimationName.dead);
         StartCoroutine(DeactiveSelf());
     }
 

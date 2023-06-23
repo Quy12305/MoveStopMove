@@ -8,9 +8,11 @@ public class Player : Character
     [SerializeField] private VariableJoystick variableJoystick;
     [SerializeField] private float speed;
 
+    private int isKilled = 0;
     private float horizontal;
     private float vertical;
     private Vector3 direction;
+    
 
     private void Update()
     {
@@ -18,9 +20,14 @@ public class Player : Character
         {
             if (isDead)
             {
-                //LevelManager.Instance.OnFinish();
-                return;
+                LevelManager.Instance.OnLose();
             }
+
+            if (isKilled >= 2)
+            {
+                LevelManager.Instance.OnFinish();
+            } 
+
             if (Input.GetMouseButton(0))
             {
                 Move();
@@ -62,4 +69,8 @@ public class Player : Character
         base.OnInit();
     }
 
+    public void EnemyIsKilled()
+    {
+        isKilled += 1;
+    }
 }

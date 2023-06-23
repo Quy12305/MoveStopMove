@@ -17,7 +17,10 @@ public class AttackState : IState
         timer += Time.deltaTime;
         if(timer > 2.5f)
         {
-            enemy.ChangeState(new PatrolState());
+            if(!enemy.dead())
+            {
+                enemy.ChangeState(new PatrolState());
+            }
         }
     }
 

@@ -111,4 +111,10 @@ public class Enemy : Character
         GameObject enemy = attackRange.GetComponent<AttackRange>().FindNearestEnemy();
         Attack(enemy);
     }
+
+
+    public bool dead()
+    {
+        return isDead;
+    }
 }

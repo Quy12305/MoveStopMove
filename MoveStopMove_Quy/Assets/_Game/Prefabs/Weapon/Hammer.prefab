@@ -115,6 +115,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   timetoLive: 2
   attackrange: {fileID: 0}
+  character: {fileID: 0}
   rb: {fileID: -7043875145805940692}
 --- !u!54 &-7043875145805940692
 Rigidbody:
