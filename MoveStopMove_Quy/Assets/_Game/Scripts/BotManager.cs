@@ -14,7 +14,7 @@ public class BotManager : Singleton<BotManager>
 
     private void Update()
     {
-        if (GameManager.Instance.IsState(GameState.GamePlay))
+        if (GameManager.Instance.IsState(GameState.GamePlay) )
         {
             if (Input.GetMouseButton(0))
             {
@@ -41,4 +41,8 @@ public class BotManager : Singleton<BotManager>
         return Botlist;
     }
 
+    public GameObject getBot()
+    {
+        return Botlist[Botlist.Count - 1];
+    }
 }

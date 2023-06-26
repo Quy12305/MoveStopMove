@@ -16,15 +16,20 @@ public class Player : Character
 
     private void Update()
     {
-        if(GameManager.Instance.IsState(GameState.GamePlay))
+        if(GameManager.Instance.IsState(GameState.GamePlay) && !isDead)
         {
-            if (isDead)
-            {
-                LevelManager.Instance.OnLose();
-            }
+            //if (isDead)
+            //{
+            //    Debug.Log("dead");
+            //    Time.timeScale = 0;
+            //    isKilled = 0;
+            //    LevelManager.Instance.OnLose();
+            //}
 
-            if (isKilled >= 2)
+            if (isKilled >= 5)
             {
+                Time.timeScale = 0;
+                isKilled = 0;
                 LevelManager.Instance.OnFinish();
             } 
 
@@ -34,7 +39,7 @@ public class Player : Character
             }
             else if (Input.GetMouseButtonUp(0))
             {
-                Stop();
+                ChangeAnim(AnimationName.idle);
                 GameObject enemy = attackRange.FindNearestEnemy();
                 if (enemy != null)
                 {
@@ -50,18 +55,19 @@ public class Player : Character
 
     private void Move()
     {
-        ChangeAnim(AnimationName.run);
-        horizontal = variableJoystick.Horizontal;
-        vertical = variableJoystick.Vertical;
-        direction = new Vector3(horizontal, 0f, vertical);
-        Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 720f * Time.deltaTime);
-        transform.position += speed * Time.deltaTime * direction;
-    }
+        //ChangeAnim(AnimationName.run);
+        //horizontal = variableJoystick.Horizontal;
+        //vertical = variableJoystick.Vertical;
+        //direction = new Vector3(horizontal, 0f, vertical);
+        //Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 720f * Time.deltaTime);
+        //transform.position += speed * Time.deltaTime * direction;
 
-    private void Stop()
-    {
-        ChangeAnim(AnimationName.idle);
+
+        this.transform.LookAt(new Vector3(this.transform.position.x + variableJoystick.Horizontal * speed * Time.deltaTime, this.transform.position.y, this.transform.position.z + variableJoystick.Vertical * speed * Time.deltaTime));
+        ChangeAnim(AnimationName.run);
+        this.transform.position = new Vector3(this.transform.position.x + variableJoystick.Horizontal * speed * Time.deltaTime, this.transform.position.y, this.transform.position.z + variableJoystick.Vertical * speed * Time.deltaTime);
+        
     }
 
     protected override void OnInit()
@@ -72,5 +78,12 @@ public class Player : Character
     public void EnemyIsKilled()
     {
         isKilled += 1;
+    }
+
+    public override void OnDeath()
+    {
+        base.OnDeath();
+        isKilled = 0;
+        LevelManager.Instance.OnLose();
     }
 }

@@ -15,16 +15,11 @@ public class Enemy : Character
 
     private void Update()
     {
-        if (isDead)
-        {
-            return;
-        }
-        else if (currentState != null && !isDead)
+        if (currentState != null && GameManager.Instance.IsState(GameState.GamePlay) )
         {
             currentState.OnExecute(this);
         }
     }
-
 
     protected override void OnInit()
     {
@@ -92,7 +87,6 @@ public class Enemy : Character
         ChangeAnim(AnimationName.idle);
     }
 
-
     public bool IsHaveTargetInRange()
     {
         GameObject enemy = attackRange.GetComponent<AttackRange>().FindNearestEnemy();
@@ -112,9 +106,10 @@ public class Enemy : Character
         Attack(enemy);
     }
 
-
-    public bool dead()
+    public override void OnDeath()
     {
-        return isDead;
+        base.OnDeath();
+        //ChangeState(null);
+        ChangeAnim(AnimationName.dead);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class Character : Singleton<Character>
 {
     [SerializeField] private Animator anim;
     [SerializeField] private SkinnedMeshRenderer characterMesh;
@@ -41,7 +41,6 @@ public class Character : MonoBehaviour
     {
         OnInit();
     }
-
 
     protected void ChangeAnim(AnimationName animationName)
     {
@@ -84,6 +83,7 @@ public class Character : MonoBehaviour
 
         GameObject weaponInstance = Instantiate(weaponPrefab, weaponTransform.position, targetRotation);
         weaponInstance.GetComponent<WeaponController>().setAttackRange(attackRange);
+        weaponInstance.GetComponent<WeaponController>().setCharacter(this);
         weaponInstance.GetComponent<WeaponController>().enabled = true;
         weaponInstance.GetComponent<WeaponController>().Attack(enemyDirection);
         StartCoroutine(ResetAttack(cooldownAttacktime));
@@ -109,7 +109,7 @@ public class Character : MonoBehaviour
     }
 
 
-    public void OnDeath()
+    public virtual void OnDeath()
     {
         isDead = true;
         ChangeAnim(AnimationName.dead);
@@ -120,7 +120,35 @@ public class Character : MonoBehaviour
     {
         yield return new WaitForSeconds(1.2f);
         IndicatorManager.Instance.RemoveIndicator(this);
-        Destroy(gameObject);
-        BotManager.Instance.getList().Remove(gameObject);
+
+        if(gameObject.GetComponent<Player>() != null )
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Destroy(gameObject);
+            BotManager.Instance.getList().Remove(gameObject);
+        }
+    }
+
+    public bool dead()
+    {
+        if (isDead == false)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public void setIsDead(bool a)
+    {
+        isDead = a;
+    }
+
+    public void setIsAttack(bool a)
+    {
+        isAttacking = a;
     }
 }

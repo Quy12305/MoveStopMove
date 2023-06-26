@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class LevelManager : Singleton<LevelManager>
 {
+    [SerializeField] private Transform weapon;
     public List<Level> levels = new List<Level>();
     public Player player;
+    public AttackRange attackRange;
     Level currentLevel;
 
     int level = 1;
@@ -34,6 +36,17 @@ public class LevelManager : Singleton<LevelManager>
     public void OnInit()
     {
         player.transform.position = currentLevel.startPointPlayer;
+        attackRange.ResetRadius();
+        weapon.gameObject.SetActive(true);
+
+        if (!player.gameObject.activeSelf)
+        {
+            player.gameObject.SetActive(true);
+            player.setIsDead(false);
+            player.setIsAttack(false);
+        }
+
+        DeleteEnemy();
     }
 
     public void OnStart()
@@ -64,6 +77,17 @@ public class LevelManager : Singleton<LevelManager>
             level = 1;
         }
         LoadLevel();
+    }
+
+    public void DeleteEnemy()
+    {
+        while(BotManager.Instance.getList().Count > 0)
+        {
+                GameObject gameobj = BotManager.Instance.getBot();
+                IndicatorManager.Instance.RemoveIndicator(gameobj.GetComponent<Character>());
+                Destroy(gameobj);
+                BotManager.Instance.getList().Remove(gameobj);
+        }
     }
 }
 

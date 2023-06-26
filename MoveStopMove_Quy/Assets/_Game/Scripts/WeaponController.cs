@@ -46,4 +46,9 @@ public class WeaponController : MonoBehaviour
     {
         attackrange = t;
     }
+
+    public void setCharacter(Character characterr)
+    {
+        character = characterr;
+    }
 }

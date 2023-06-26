@@ -58,4 +58,9 @@ public class AttackRange : MonoBehaviour
         value = true;
     }
 
+    public void ResetRadius()
+    {
+        radius = 7f;
+        value= true;
+    }
 }
