@@ -28,12 +28,11 @@ public class Player : Character
 
             if (isKilled >= 5)
             {
-                Time.timeScale = 0;
                 isKilled = 0;
                 LevelManager.Instance.OnFinish();
             } 
 
-            if (Input.GetMouseButton(0))
+            if (variableJoystick.Horizontal !=0 || variableJoystick.Vertical !=0)
             {
                 Move();
             }

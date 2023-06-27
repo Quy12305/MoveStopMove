@@ -20,7 +20,7 @@ public class BotManager : Singleton<BotManager>
             {
                 isplay = true;
             }
-            if (isplay && Botlist.Count < 4)
+            if (isplay && Botlist.Count < 6)
             {
                 SpawnAI();
             }
@@ -44,5 +44,10 @@ public class BotManager : Singleton<BotManager>
     public GameObject getBot()
     {
         return Botlist[Botlist.Count - 1];
+    }
+
+    public void setIsPlay(bool a)
+    {
+        isplay = a;
     }
 }

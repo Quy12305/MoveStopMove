@@ -145,6 +145,10 @@ PrefabInstance:
       value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 3375847626577298784, guid: b124cf374d32069409a3482a3a979537, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3375847626577298784, guid: b124cf374d32069409a3482a3a979537, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -195,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 3375847626577298797, guid: b124cf374d32069409a3482a3a979537, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ade4d9b3b14d5b045884be40b327deb1, type: 2}
+      objectReference: {fileID: 2100000, guid: 4ab9b41d9d99ce346be37a4aaa2c5c8f, type: 2}
     - target: {fileID: 3846292538853048483, guid: b124cf374d32069409a3482a3a979537, type: 3}
       propertyPath: player
       value: 

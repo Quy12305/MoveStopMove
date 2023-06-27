@@ -38,6 +38,7 @@ public class LevelManager : Singleton<LevelManager>
         player.transform.position = currentLevel.startPointPlayer;
         attackRange.ResetRadius();
         weapon.gameObject.SetActive(true);
+        BotManager.Instance.setIsPlay(false);
 
         if (!player.gameObject.activeSelf)
         {
