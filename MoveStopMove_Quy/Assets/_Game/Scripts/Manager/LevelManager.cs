@@ -9,6 +9,9 @@ public class LevelManager : Singleton<LevelManager>
     public List<Level> levels = new List<Level>();
     public Player player;
     public AttackRange attackRange;
+    public AudioSource aus;
+    public AudioClip Finish;
+    public AudioClip Lose;
     Level currentLevel;
 
     int level = 1;
@@ -57,11 +60,13 @@ public class LevelManager : Singleton<LevelManager>
 
     public void OnFinish()
     {
+        aus.PlayOneShot(Finish);
         UIManager.Instance.OpenFinishUI();
         GameManager.Instance.ChangeState(GameState.Finish);
     }
     public void OnLose()
     {
+        aus.PlayOneShot(Lose);
         UIManager.Instance.OpenLoseUI();
         GameManager.Instance.ChangeState(GameState.Lose);
     }

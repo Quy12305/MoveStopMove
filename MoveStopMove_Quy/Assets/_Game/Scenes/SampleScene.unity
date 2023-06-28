@@ -208,6 +208,9 @@ MonoBehaviour:
   - {fileID: 3324012252397941746, guid: 70c8382afa2ab2e43a899e445b7b36f5, type: 3}
   player: {fileID: 2053728742}
   attackRange: {fileID: 1073566643}
+  aus: {fileID: 1788346939}
+  Finish: {fileID: 8300000, guid: 6363a9021e31a304ba1b643cb7722f3f, type: 3}
+  Lose: {fileID: 8300000, guid: b0ecab52e9a553142a999ebe0df5bfa6, type: 3}
 --- !u!4 &154396882
 Transform:
   m_ObjectHideFlags: 0
@@ -599,7 +602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &535551151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,6 +1473,134 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75258f292f6fd2b4fa518834e905788e, type: 3}
+--- !u!1 &1788346938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1788346940}
+  - component: {fileID: 1788346939}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1788346939
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788346938}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1788346940
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788346938}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 520.65533, y: 1303.6931, z: 777.34546}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2021035905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6773614081257539280, guid: 755f6c7b2c335834286b3a2fd9217f6a, type: 3}
@@ -1533,6 +1664,26 @@ PrefabInstance:
       propertyPath: radius
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5512340710741473271, guid: 755f6c7b2c335834286b3a2fd9217f6a, type: 3}
+      propertyPath: ads
+      value: 
+      objectReference: {fileID: 1788346939}
+    - target: {fileID: 5512340710741473271, guid: 755f6c7b2c335834286b3a2fd9217f6a, type: 3}
+      propertyPath: Chet
+      value: 
+      objectReference: {fileID: 8300000, guid: 16b52ebdd0399bc4a895304229d1ef43, type: 3}
+    - target: {fileID: 5512340710741473271, guid: 755f6c7b2c335834286b3a2fd9217f6a, type: 3}
+      propertyPath: VaCham
+      value: 
+      objectReference: {fileID: 8300000, guid: 92107c748c6494d41a9cb090f017946d, type: 3}
+    - target: {fileID: 5512340710741473271, guid: 755f6c7b2c335834286b3a2fd9217f6a, type: 3}
+      propertyPath: NemVuKhi
+      value: 
+      objectReference: {fileID: 8300000, guid: bf63cb033e5e6ef4e9bfe5553e44cbae, type: 3}
+    - target: {fileID: 5512340710741473271, guid: 755f6c7b2c335834286b3a2fd9217f6a, type: 3}
+      propertyPath: TrungEnemy
+      value: 
+      objectReference: {fileID: 8300000, guid: f4e59084b141a76498a865bc81ef9a8a, type: 3}
     - target: {fileID: 5512340710741473271, guid: 755f6c7b2c335834286b3a2fd9217f6a, type: 3}
       propertyPath: weaponPrefab
       value: 

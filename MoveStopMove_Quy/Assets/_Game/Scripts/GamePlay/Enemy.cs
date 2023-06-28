@@ -109,7 +109,7 @@ public class Enemy : Character
     public override void OnDeath()
     {
         base.OnDeath();
-        //ChangeState(null);
+        ChangeState(null);
         ChangeAnim(AnimationName.dead);
     }
 }

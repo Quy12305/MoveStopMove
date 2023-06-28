@@ -42,13 +42,13 @@ public class WeaponController : MonoBehaviour
         }
     }
 
-    public void setAttackRange(AttackRange t)
+    public void setAttackRange(AttackRange atr)
     {
-        attackrange = t;
+        attackrange = atr;
     }
 
-    public void setCharacter(Character characterr)
+    public void setCharacter(Character chrt)
     {
-        character = characterr;
+        character = chrt;
     }
 }

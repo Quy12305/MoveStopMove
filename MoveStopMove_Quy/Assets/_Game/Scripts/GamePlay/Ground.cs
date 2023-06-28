@@ -10,6 +10,7 @@ public class Ground : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.Find("Player");
         bounds.center = transform.position;
         bounds.extents = new Vector3(35f, 0, 35f);
     }

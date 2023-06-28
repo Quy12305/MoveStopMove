@@ -16,8 +16,11 @@ public class Character : Singleton<Character>
 
     [SerializeField] Transform attachIndicatorPoint;
     public Transform AttachIndicatorPoint => attachIndicatorPoint;
-
     public List<Material> pantMaterials;
+    public AudioSource ads;
+    public AudioClip NemVuKhi;
+    public AudioClip VaCham;
+    public AudioClip Chet;
 
     protected WeaponData weaponData;
     protected bool isMoving = false;
@@ -82,9 +85,13 @@ public class Character : Singleton<Character>
         targetRotation.eulerAngles = new Vector3(-90f, targetRotation.eulerAngles.y, targetRotation.eulerAngles.z);
 
         GameObject weaponInstance = Instantiate(weaponPrefab, weaponTransform.position, targetRotation);
+        ads.PlayOneShot(NemVuKhi);
         weaponInstance.GetComponent<WeaponController>().setAttackRange(attackRange);
         weaponInstance.GetComponent<WeaponController>().setCharacter(this);
-        weaponInstance.GetComponent<WeaponController>().enabled = true;
+        if(GameManager.Instance.IsState(GameState.Finish) || GameManager.Instance.IsState(GameState.Lose))
+        {
+            weaponInstance.GetComponent<Collider>().enabled = false;
+        }
         weaponInstance.GetComponent<WeaponController>().Attack(enemyDirection);
         StartCoroutine(ResetAttack(cooldownAttacktime));
     }
@@ -111,6 +118,8 @@ public class Character : Singleton<Character>
 
     public virtual void OnDeath()
     {
+        ads.PlayOneShot(Chet);
+        //ads.PlayOneShot(VaCham);
         isDead = true;
         ChangeAnim(AnimationName.dead);
         StartCoroutine(DeactiveSelf());
@@ -120,6 +129,7 @@ public class Character : Singleton<Character>
     {
         yield return new WaitForSeconds(1.2f);
         IndicatorManager.Instance.RemoveIndicator(this);
+        //ads.PlayOneShot(Chet);
 
         if(gameObject.GetComponent<Player>() != null )
         {
@@ -134,12 +144,7 @@ public class Character : Singleton<Character>
 
     public bool dead()
     {
-        if (isDead == false)
-        {
-            return false;
-        }
-
-        return true;
+        return isDead;
     }
 
     public void setIsDead(bool a)
