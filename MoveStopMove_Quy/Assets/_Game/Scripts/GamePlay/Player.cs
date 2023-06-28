@@ -36,7 +36,8 @@ public class Player : Character
             {
                 Move();
             }
-            else if (Input.GetMouseButtonUp(0))
+            //else if (Input.GetMouseButtonUp(0))
+            else if( !isAttacking )
             {
                 ChangeAnim(AnimationName.idle);
                 GameObject enemy = attackRange.FindNearestEnemy();

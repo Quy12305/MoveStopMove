@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BotManager : Singleton<BotManager>
 {
+    [SerializeField] private VariableJoystick variableJoystick;
     [SerializeField] GameObject Botprefab;
     [SerializeField] List<GameObject> Botlist = new List<GameObject>();
     private bool isplay=false;
@@ -16,7 +17,7 @@ public class BotManager : Singleton<BotManager>
     {
         if (GameManager.Instance.IsState(GameState.GamePlay) )
         {
-            if (Input.GetMouseButton(0))
+            if (variableJoystick.Horizontal != 0 || variableJoystick.Vertical != 0)
             {
                 isplay = true;
             }

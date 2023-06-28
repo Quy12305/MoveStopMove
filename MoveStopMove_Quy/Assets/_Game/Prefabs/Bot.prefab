@@ -178,7 +178,7 @@ MonoBehaviour:
   characterLayer:
     serializedVersion: 2
     m_Bits: 8
-  radius: 8
+  radius: 9
   cylinder: {fileID: 7524841236732285607}
 --- !u!1 &6357142603798938974
 GameObject:
@@ -1262,6 +1262,14 @@ PrefabInstance:
     - target: {fileID: 2848433054130847435, guid: e91e674edd411e448b894e733e711e28, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848433054130847435, guid: e91e674edd411e448b894e733e711e28, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848433054130847435, guid: e91e674edd411e448b894e733e711e28, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2848433054130847435, guid: e91e674edd411e448b894e733e711e28, type: 3}
       propertyPath: m_LocalPosition.x
