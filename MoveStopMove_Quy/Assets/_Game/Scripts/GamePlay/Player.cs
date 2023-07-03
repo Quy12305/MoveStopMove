@@ -18,15 +18,8 @@ public class Player : Character
     {
         if(GameManager.Instance.IsState(GameState.GamePlay) && !isDead)
         {
-            //if (isDead)
-            //{
-            //    Debug.Log("dead");
-            //    Time.timeScale = 0;
-            //    isKilled = 0;
-            //    LevelManager.Instance.OnLose();
-            //}
 
-            if (isKilled >= 5)
+            if (isKilled >= 100)
             {
                 isKilled = 0;
                 LevelManager.Instance.OnFinish();
@@ -36,7 +29,7 @@ public class Player : Character
             {
                 Move();
             }
-            //else if (Input.GetMouseButtonUp(0))
+            
             else if( !isAttacking )
             {
                 ChangeAnim(AnimationName.idle);

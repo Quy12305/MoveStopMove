@@ -1682,6 +1682,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: bf63cb033e5e6ef4e9bfe5553e44cbae, type: 3}
     - target: {fileID: 5512340710741473271, guid: 755f6c7b2c335834286b3a2fd9217f6a, type: 3}
+      propertyPath: PantData
+      value: 
+      objectReference: {fileID: 11400000, guid: c2d08b866199d954b8cd8730fbe305c8, type: 2}
+    - target: {fileID: 5512340710741473271, guid: 755f6c7b2c335834286b3a2fd9217f6a, type: 3}
       propertyPath: TrungEnemy
       value: 
       objectReference: {fileID: 8300000, guid: f4e59084b141a76498a865bc81ef9a8a, type: 3}

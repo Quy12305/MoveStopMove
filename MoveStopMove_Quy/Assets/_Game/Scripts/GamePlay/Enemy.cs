@@ -42,7 +42,7 @@ public class Enemy : Character
 
     public void RandomMove()
     {
-        if (!isMoving)
+        if (!isMoving && !isDead)
         {
             targetPos = FindRandomPosition(transform.position, radius);
             isMoving = true;
@@ -108,8 +108,7 @@ public class Enemy : Character
 
     public override void OnDeath()
     {
-        base.OnDeath();
         ChangeState(null);
-        ChangeAnim(AnimationName.dead);
+        base.OnDeath();
     }
 }

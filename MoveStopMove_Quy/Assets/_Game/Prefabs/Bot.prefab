@@ -62,15 +62,7 @@ MonoBehaviour:
     m_Bits: 8
   attackRange: {fileID: 2034055033737463044}
   attachIndicatorPoint: {fileID: 2097386286364451478}
-  pantMaterials:
-  - {fileID: 2100000, guid: 88e9579145f18414194a847eec02ba06, type: 2}
-  - {fileID: 2100000, guid: 927ecdbe41479764e8b3d79e0fbc1e88, type: 2}
-  - {fileID: 2100000, guid: 278f28f13cf87f847939cbee1b003dcc, type: 2}
-  - {fileID: 2100000, guid: 36b391c6245b0b74881d79e80c22ea55, type: 2}
-  - {fileID: 2100000, guid: ab5745e9c673439448cefe5ff80a2f32, type: 2}
-  - {fileID: 2100000, guid: bd750bdb6c3ab3347816285e2dcd82b6, type: 2}
-  - {fileID: 2100000, guid: 31f26450e4066484dbeda71a9ebf39f8, type: 2}
-  - {fileID: 2100000, guid: 18fda5298ef944b4cad026413fcf3f1b, type: 2}
+  PantData: {fileID: 11400000, guid: c2d08b866199d954b8cd8730fbe305c8, type: 2}
   ads: {fileID: 702355433718311447}
   NemVuKhi: {fileID: 8300000, guid: bf63cb033e5e6ef4e9bfe5553e44cbae, type: 3}
   VaCham: {fileID: 8300000, guid: 92107c748c6494d41a9cb090f017946d, type: 3}

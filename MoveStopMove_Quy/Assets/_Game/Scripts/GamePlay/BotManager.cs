@@ -21,7 +21,7 @@ public class BotManager : Singleton<BotManager>
             {
                 isplay = true;
             }
-            if (isplay && Botlist.Count < 6)
+            if (isplay && Botlist.Count < 10)
             {
                 SpawnAI();
             }

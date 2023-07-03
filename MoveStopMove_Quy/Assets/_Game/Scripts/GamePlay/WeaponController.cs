@@ -31,6 +31,11 @@ public class WeaponController : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("characterLayer"))
         {
+            //if (character.GetComponent<Enemy>() != null)
+            //{
+            //    other.GetComponent<Enemy>().ChangeState(null);
+            //}
+
             Destroy(gameObject);
             other.GetComponent<Character>().OnDeath();
             attackrange.ChangeAttacRange();

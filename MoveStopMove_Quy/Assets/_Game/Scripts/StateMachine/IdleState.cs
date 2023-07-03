@@ -23,10 +23,7 @@ public class IdleState : IState
         }
         else if (timer > randomTime)
         {
-            if(enemy.dead() == false)
-            {
                 enemy.ChangeState(new PatrolState());
-            }
         }
     }
 

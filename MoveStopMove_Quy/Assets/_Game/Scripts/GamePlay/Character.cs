@@ -16,7 +16,8 @@ public class Character : Singleton<Character>
 
     [SerializeField] Transform attachIndicatorPoint;
     public Transform AttachIndicatorPoint => attachIndicatorPoint;
-    public List<Material> pantMaterials;
+    //public List<Material> pantMaterials;
+    public PantData PantData;
     public AudioSource ads;
     public AudioClip NemVuKhi;
     public AudioClip VaCham;
@@ -57,11 +58,9 @@ public class Character : Singleton<Character>
 
     public void ChangeSkin(int colorID)
     {
-        if (colorID < pantMaterials.Count)
-        {
-            characterMesh.material = pantMaterials[colorID];
-            PantMesh.material = pantMaterials[colorID];
-        }
+        PantType pantType = (PantType)colorID;
+        characterMesh.material = PantData.GetPant(pantType);
+        PantMesh.material = PantData.GetPant(pantType);
     }
     protected virtual void Attack(GameObject enemy)
     {
@@ -115,7 +114,6 @@ public class Character : Singleton<Character>
         ChangeSkin(temp);
     }
 
-
     public virtual void OnDeath()
     {
         ads.PlayOneShot(Chet);
@@ -130,7 +128,6 @@ public class Character : Singleton<Character>
         yield return new WaitForSeconds(1.2f);
         IndicatorManager.Instance.RemoveIndicator(this);
         //ads.PlayOneShot(Chet);
-
         if(gameObject.GetComponent<Player>() != null )
         {
             gameObject.SetActive(false);
