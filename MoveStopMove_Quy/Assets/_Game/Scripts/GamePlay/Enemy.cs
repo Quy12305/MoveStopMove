@@ -42,7 +42,7 @@ public class Enemy : Character
 
     public void RandomMove()
     {
-        if (!isMoving && !isDead)
+        if (!isMoving)
         {
             targetPos = FindRandomPosition(transform.position, radius);
             isMoving = true;

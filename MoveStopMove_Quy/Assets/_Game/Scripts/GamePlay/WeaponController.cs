@@ -29,14 +29,10 @@ public class WeaponController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("characterLayer"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("characterLayer") && other.GetComponent<Character>() != character)
         {
-            //if (character.GetComponent<Enemy>() != null)
-            //{
-            //    other.GetComponent<Enemy>().ChangeState(null);
-            //}
-
-            Destroy(gameObject);
+            Destroy(gameObject);  
+            other.GetComponent<Rigidbody>().velocity = Vector3.zero;
             other.GetComponent<Character>().OnDeath();
             attackrange.ChangeAttacRange();
 
