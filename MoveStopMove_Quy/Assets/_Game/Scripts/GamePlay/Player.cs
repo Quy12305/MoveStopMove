@@ -19,7 +19,7 @@ public class Player : Character
         if(GameManager.Instance.IsState(GameState.GamePlay) && !isDead)
         {
 
-            if (isKilled >= 100)
+            if (isKilled >= 7)
             {
                 isKilled = 0;
                 LevelManager.Instance.OnFinish();

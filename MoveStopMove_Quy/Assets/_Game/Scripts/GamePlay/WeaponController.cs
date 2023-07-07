@@ -34,6 +34,7 @@ public class WeaponController : MonoBehaviour
             Destroy(gameObject);  
             other.GetComponent<Rigidbody>().velocity = Vector3.zero;
             other.GetComponent<Character>().OnDeath();
+            character.changeScale();
             attackrange.ChangeAttacRange();
 
             if(character.GetComponent<Player>() != null)

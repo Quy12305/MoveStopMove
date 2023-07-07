@@ -51,7 +51,7 @@ public class AttackRange : MonoBehaviour
 
     public void ChangeAttacRange()
     {
-        if(radius < 13)
+        if(radius < 15)
         {
             radius += 1f;
         }

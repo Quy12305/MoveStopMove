@@ -9,7 +9,7 @@ public class Character : Singleton<Character>
     [SerializeField] private SkinnedMeshRenderer characterMesh;
     [SerializeField] private SkinnedMeshRenderer PantMesh;
     [SerializeField] private Transform weaponTransform;
-
+    [SerializeField] private GameObject Size;
     [SerializeField] protected GameObject weaponPrefab;
     [SerializeField] protected LayerMask characterLayer;
     [SerializeField] protected AttackRange attackRange;
@@ -84,6 +84,7 @@ public class Character : Singleton<Character>
         targetRotation.eulerAngles = new Vector3(-90f, targetRotation.eulerAngles.y, targetRotation.eulerAngles.z);
 
         GameObject weaponInstance = Instantiate(weaponPrefab, weaponTransform.position, targetRotation);
+        weaponInstance.transform.localScale *= Size.transform.localScale.x;
         ads.PlayOneShot(NemVuKhi);
         weaponInstance.GetComponent<WeaponController>().setAttackRange(attackRange);
         weaponInstance.GetComponent<WeaponController>().setCharacter(this);
@@ -152,5 +153,10 @@ public class Character : Singleton<Character>
     public void setIsAttack(bool a)
     {
         isAttacking = a;
+    }
+
+    public void changeScale()
+    {
+        Size.transform.localScale += new Vector3(0.07f, 0.07f, 0.07f) ;
     }
 }

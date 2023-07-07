@@ -56,6 +56,7 @@ MonoBehaviour:
   characterMesh: {fileID: 4235731195446440714}
   PantMesh: {fileID: 4983596492182173289}
   weaponTransform: {fileID: 3454757480198869033}
+  Size: {fileID: 5669851869517282537}
   weaponPrefab: {fileID: 8046043260583000945, guid: f65aae32cbc4aa24aa8098ab24cdbc0b, type: 3}
   characterLayer:
     serializedVersion: 2
@@ -1160,6 +1161,11 @@ SkinnedMeshRenderer:
 --- !u!137 &4983596492182173289 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6418510024456293893, guid: 537e5f50686e8ff41a07912e3fe8546f, type: 3}
+  m_PrefabInstance: {fileID: 2034055033668434028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5669851869517282537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5950722382482080901, guid: 537e5f50686e8ff41a07912e3fe8546f, type: 3}
   m_PrefabInstance: {fileID: 2034055033668434028}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8715597659374587642 stripped
